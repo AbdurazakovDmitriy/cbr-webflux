@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+cbr-daily:
+  url: "https://cbr.ru/scripts/XML_daily.asp"
+
+caching:
+  spring:
+    ratesTTL: 43200000
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:${server.port}/admin
+      context-path: /admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
